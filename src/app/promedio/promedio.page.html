@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Promedio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">promedio</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Promediadora</ion-card-title>
+    <ion-card-subtitle>Ingrese tres numeros y le damos el promedio</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-input
+        label="Enter text"
+        label-placement="floating"
+        fill="outline"
+        placeholder="Ingrese un número"
+        [(ngModel)]="numero1"
+        type = "number" >
+      </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+        label="Enter text"
+        label-placement="floating"
+        fill="outline"
+        placeholder="Ingrese un número"
+        [(ngModel)]="numero2"
+        type = "number" >
+      </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+        label="Enter text"
+        label-placement="floating"
+        fill="outline"
+        placeholder="Ingrese un número"
+        [(ngModel)]="numero3"
+        type = "number" >
+      </ion-input>
+      </ion-item>
+      
+      <ion-list *ngIf="resultado !==null">
+        <p>Resultado: {{resultado}}</p>
+      </ion-list>
+
+      <ion-button (click) = "getProm()">Obtener promedio</ion-button>
+
+      <ion-item lines="none" *ngIf="MsgError">
+        <p style="color: red;">{{ MsgError }}</p> 
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+</ion-content>
